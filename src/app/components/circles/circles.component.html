@@ -1,0 +1,21 @@
+<main role="main" class="container-fluid">
+    <!-- <div class="row">
+        <div class="card-deck mt-2">
+            <div  [routerLink]="['/circle', circle.id]" class="card bg-light" (click)="onCircleClick(circle)" *ngFor="let circle of circles">
+                <div class="card-Header text-center">
+                    <h4 class="card-text">{{circle.name}}</h4>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <ul class="nav justify-content-center">
+        <li class="nav-item" *ngFor="let circle of circles">
+          <a [routerLink]="['/circle', circle.id]" class="nav-link">{{circle.name}}</a>
+        </li>
+    </ul>
+
+
+    <!-- <app-main-circle [circle]="selectedCircle"></app-main-circle> -->
+    <router-outlet></router-outlet>
+</main>

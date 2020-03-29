@@ -1,0 +1,15 @@
+<ng-container *ngIf="event">
+  <div class="container">
+    <div class="card">
+      <div class="card-body">
+        <h3 class="card-title">Event Details</h3>
+        <p class="card-text"><b>Details</b>: {{event.what}}</p>
+        <p class="card-text"><b>Address</b>: {{displayAddress}}</p> 
+        <p class="card-text"><b>Date of event</b>: {{event.when | date:'fullDate'}}</p> 
+        <p class="card-text"><span>{{whoString}}</span></p>
+        <p class="card-text text-right"><button type="button" class="btn btn-warning">
+          <span class="">Book in</span></button></p>
+      </div>
+    </div>
+  </div>
+</ng-container>

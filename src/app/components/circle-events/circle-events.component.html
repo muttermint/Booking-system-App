@@ -1,0 +1,45 @@
+<ng-container *ngIf="circle">
+    <h3 class="mb-2 font-italic">
+        Events for {{circle.name}}
+    </h3>
+</ng-container>
+
+<ng-container *ngIf="circle">
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">When</th>
+            <th scope="col">What</th>
+            <th scope="col">Where</th>
+            <th scope="col">Who</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of events;" (click)="onClickEvent(item)">
+              <td>{{item.when | date:'fullDate'}}</td>
+              <td class="text-left">{{item.what}}</td>
+              <td>{{item.where}}</td>
+              <td>
+                <p> 
+                  <span>Brothers</span>
+                  <span *ngIf="item.ladies">ladies</span>
+                  <span *ngIf="item.ladies">clergy</span>
+              </p>
+              </td>
+              <td>
+                <!-- <button type="button" class="btn btn-primary">Details<span class="fas fa-clipboard-list"></span></button> -->
+                <a [routerLink]="['/circle', circle.id]" class="nav-link">{{circle.name}}</a>
+              </td>
+              <td>
+                <button type="button" class="btn btn-warning"><span class="">Book in</span></button>
+              </td>
+            </tr>
+        </tbody>
+    </table>
+    
+
+</ng-container>
+
+
